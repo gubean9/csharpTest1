@@ -14,6 +14,10 @@ namespace SignedUnsigned
             sbyte b = (sbyte)a;
 
             Console.WriteLine(b);
+
+            uint c = uint.MaxValue;
+            int d = int.MinValue;
+            Console.WriteLine($"Max = {c}, Min = {d}");
         }
     }
 }
