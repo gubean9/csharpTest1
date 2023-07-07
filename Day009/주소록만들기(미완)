@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace 예제
+{
+    class Person
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
+
+        public Person(int id, string name, string number)
+        {
+            ID = id;
+            Name = name;
+            PhoneNumber = number;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine("1. 데이터 삽입");
+                Console.WriteLine("2. 데이터 삭제");
+                Console.WriteLine("3. 데이터 조회");
+                Console.WriteLine("4. 데이터 수정");
+                Console.WriteLine("5. 프로그램 종료");
+                Console.WriteLine();
+                Console.Write("메뉴 : ");
+
+                List<Person> list = new List<Person>();
+
+                int id;
+                string name, pnum;
+
+                
+
+                switch (int.Parse(Console.ReadLine()))
+                {
+                    case 1:
+                        Console.Write("삽입할 ID를 입력하세요 : ");
+                        id = int.Parse(Console.ReadLine());
+
+                        Console.Write("삽입할 이름을 입력하세요 : ");
+                        name = Console.ReadLine();
+
+                        Console.Write("삽입할 전화번호를 입력하세요 : ");
+                        pnum = Console.ReadLine();
+
+                        Person data = new Person(id, name, pnum);
+
+                        list.Add(data);
+
+                        foreach (Person s in list)
+                            Console.WriteLine(s.ID, s.Name, s.PhoneNumber);
+                        break;
+
+                    case 2:
+                        Console.Write("삽입할 ID를 입력하세요 : ");
+                        int Delid = int.Parse(Console.ReadLine());
+
+                        //list.Remove(Delid);
+
+                        break;
+
+                    case 3:
+                        break;
+
+                    case 4:
+                        break;
+
+                    case 5:
+                        Console.WriteLine("프로그램을 종료합니다");
+                        //Console.WriteLine();
+                        Environment.Exit(0);
+                        break;
+
+                    default:
+                        Console.WriteLine("잘못된 숫자를 입력하셨습니다");
+                        //Console.WriteLine();
+                        break;
+                }
+            }
+        }
+    }
+}
